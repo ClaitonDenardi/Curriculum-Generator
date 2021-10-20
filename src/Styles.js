@@ -88,3 +88,38 @@ export const Section = styled.h2`
   margin-bottom: 0;
   border-bottom: 1px solid #000;
 `;
+
+export const Editor = styled.div`
+  width: 50vw;
+`;
+
+export const Preview = styled.div`
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  background-color: rgb(211, 211, 211);
+  background-position: center center, center center, 0% 0%;
+  background-repeat: repeat, repeat, repeat;
+  background-attachment: scroll, scroll, scroll;
+  background-image: linear-gradient(90deg, rgb(250, 255, 243) 20px, transparent 1%),
+    linear-gradient(rgb(250, 255, 249) 20px, transparent 1%), none;
+  background-origin: padding-box, padding-box, padding-box;
+  background-clip: border-box, border-box, border-box;
+  background-size: 22px 22px;
+`;
+
+export const Paper = styled.div`
+  width: 30vw;
+  height: 85vh;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 20px 12px;
+`;
+
+export const Scale = styled.div`
+  // transform: scale(0.5);
+`;

@@ -27,24 +27,24 @@ const Experiences = ({ experiences, updateField, collapse, toggle, remove, add }
                 <ItemRow>
                   <Input
                     value={exp.company}
-                    onChange={(e) => updateField(index, "company", e.target.value)}
+                    onChange={(e) => updateField(index, "company", e.target.value, "experience")}
                     placeholder="Company"
                   />
                   <Input
                     value={exp.job}
-                    onChange={(e) => updateField(index, "job", e.target.value)}
+                    onChange={(e) => updateField(index, "job", e.target.value, "experience")}
                     placeholder="Job"
                   />
                 </ItemRow>
                 <ItemRow>
                   <Input
                     value={exp.dti}
-                    onChange={(e) => updateField(index, "dti", e.target.value)}
+                    onChange={(e) => updateField(index, "dti", e.target.value, "experience")}
                     type="date"
                   />
                   <Input
                     value={exp.dtf}
-                    onChange={(e) => updateField(index, "dtf", e.target.value)}
+                    onChange={(e) => updateField(index, "dtf", e.target.value, "experience")}
                     type="date"
                   />
                 </ItemRow>
@@ -52,7 +52,7 @@ const Experiences = ({ experiences, updateField, collapse, toggle, remove, add }
                   <TextArea
                     value={exp.tasks}
                     placeholder="Tasks performed"
-                    onChange={(e) => updateField(index, "tasks", e.target.value)}
+                    onChange={(e) => updateField(index, "tasks", e.target.value, "experience")}
                   />
                 </ItemRow>
               </ItemData>

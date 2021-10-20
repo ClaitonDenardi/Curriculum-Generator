@@ -6,6 +6,10 @@ import {
   Dates,
   Description,
   Section,
+  Editor,
+  Preview,
+  Paper,
+  Scale,
 } from "../Styles";
 import Education from "./Education";
 import Languages from "./Languages";
@@ -71,8 +75,10 @@ function Generator() {
         <Section>Languages</Section>
         {languages.map((exp) => (
           <ul>
-            <PrimaryInfo>{exp.language}</PrimaryInfo>
-            <SecondaryInfo>{exp.fluence}</SecondaryInfo>
+            <PrimaryInfo>
+              {exp.language} -{" "}
+              <span style={{ fontSize: "14px", fontWeight: "normal" }}>{exp.fluence}</span>
+            </PrimaryInfo>
           </ul>
         ))}
       </div>
@@ -80,6 +86,7 @@ function Generator() {
   };
 
   const addItem = (section) => {
+    console.log(section);
     let aux = [];
     switch (section) {
       case "experience":
@@ -105,6 +112,7 @@ function Generator() {
         setEducation([...aux]);
         break;
       case "languages":
+        aux = languages;
         aux.push({
           language: "",
           fluence: "",
@@ -130,6 +138,7 @@ function Generator() {
         setEducation([...aux]);
         break;
       case "languages":
+        aux = languages;
         aux.splice(index, 1);
         setLanguages([...aux]);
         break;
@@ -167,7 +176,7 @@ function Generator() {
 
   return (
     <div className="App">
-      <div className="Content">
+      <Editor>
         <Experiences
           experiences={experiences}
           updateField={updateField}
@@ -192,13 +201,17 @@ function Generator() {
           remove={removeItem}
           add={addItem}
         />
-      </div>
-      <div className="Preview">
-        <div ref={componentRef}>
-          <ComponentToPrint />
-        </div>
+      </Editor>
+      <Preview>
+        <Paper>
+          <Scale>
+            <div ref={componentRef}>
+              <ComponentToPrint />
+            </div>
+          </Scale>
+        </Paper>
         <ReactToPrint trigger={() => <button>Print</button>} content={() => componentRef.current} />
-      </div>
+      </Preview>
     </div>
   );
 }

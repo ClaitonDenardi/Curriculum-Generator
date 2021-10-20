@@ -7,7 +7,8 @@ const IconButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ plus }) => (plus ? "#b1ec7a" : "#ffbd3f")};
+  background: ${({ plus }) => (plus ? "#14a750" : "#ffbd3f")};
+  color: #fff;
   margin-right: ${({ plus }) => !plus && "5px"};
   border: none;
   width: 30px;
