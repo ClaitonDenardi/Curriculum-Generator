@@ -10,27 +10,3 @@
 .Preview {
   width: 50vw;
 }
-
-.Container {
-  border: 1px solid #c4c4c4;
-  border-radius: 8px;
-}
-
-.Section {
-  width: 90%;
-}
-
-.SubSection {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.Commands {
-  width: 10%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  height: 30px;
-}

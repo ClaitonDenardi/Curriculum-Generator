@@ -73,3 +73,25 @@ export const Title = styled.div`
   justify-content: space-between;
   padding: 20px 10px;
 `;
+
+export const PrimaryInfo = styled.li`
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const SecondaryInfo = styled.p`
+  margin: 0;
+  font-size: 14px;
+`;
+
+export const Dates = styled.span`
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+`;
+
+export const Description = styled.p`
+  margin: 0;
+  font-size: 14px;
+`;
