@@ -56,18 +56,6 @@ export const TextArea = styled.textarea`
   margin-bottom: 10px;
 `;
 
-export const Button = styled.button`
-  background: ${({ plus }) => (plus ? "#b1ec7a" : "#ffbd3f")};
-  margin-right: ${({ plus }) => !plus && "5px"};
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-`;
-
 export const Title = styled.div`
   display: flex;
   justify-content: space-between;
@@ -94,4 +82,9 @@ export const Dates = styled.span`
 export const Description = styled.p`
   margin: 0;
   font-size: 14px;
+`;
+
+export const Section = styled.h2`
+  margin-bottom: 0;
+  border-bottom: 1px solid #000;
 `;
