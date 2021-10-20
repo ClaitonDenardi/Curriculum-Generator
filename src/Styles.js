@@ -56,6 +56,12 @@ export const TextArea = styled.textarea`
   margin-bottom: 10px;
 `;
 
+export const Name = styled.div`
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
 export const Title = styled.div`
   display: flex;
   justify-content: space-between;
@@ -84,7 +90,7 @@ export const Description = styled.p`
   font-size: 14px;
 `;
 
-export const Section = styled.h2`
+export const Section = styled.h3`
   margin-bottom: 0;
   border-bottom: 1px solid #000;
 `;
@@ -125,7 +131,13 @@ export const Paper = styled.div`
 
 export const Scale = styled.div`
   scale: 0.5;
-  margin-top: -100px;
+  margin-top: -90px;
   margin-left: -100px;
   display: flex;
+`;
+
+export const Printable = styled.div`
+  padding: 70px; 50px;
+  text-align: left;
+  font-family: ${({ font }) => (font ? font : "Helvetica")}; ;
 `;

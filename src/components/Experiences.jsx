@@ -18,7 +18,7 @@ const Experiences = ({ experiences, updateField, collapse, toggle, remove, add }
       <Container collapse={collapse}>
         <Title>
           <span>Experience</span>
-          <ToggleIcon module="experiences" collapse={collapse} toggle={toggle}/>
+          <ToggleIcon module="experience" collapse={collapse} toggle={toggle}/>
         </Title>
         <ContainerScroll>
           {experiences.map((exp, index) => (

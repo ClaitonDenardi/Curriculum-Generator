@@ -10,11 +10,14 @@ import {
   Preview,
   Paper,
   Scale,
+  Name,
+  Printable,
 } from "../Styles";
 import Education from "./Education";
 import Languages from "./Languages";
 import Experiences from "./Experiences";
 import Personal from "./Personal";
+import Settings from "./Settings";
 
 function Generator() {
   const componentRef = useRef(null);
@@ -25,6 +28,7 @@ function Generator() {
     education: true,
     languages: true,
   });
+
   const [personal, setPersonal] = useState([
     {
       name: "",
@@ -34,6 +38,7 @@ function Generator() {
       intro: "",
     },
   ]);
+
   const [experiences, setExperiences] = useState([
     {
       company: "",
@@ -43,6 +48,7 @@ function Generator() {
       tasks: "",
     },
   ]);
+
   const [education, setEducation] = useState([
     {
       school: "",
@@ -52,6 +58,7 @@ function Generator() {
       dtf: "",
     },
   ]);
+
   const [languages, setLanguages] = useState([
     {
       langauge: "",
@@ -59,16 +66,18 @@ function Generator() {
     },
   ]);
 
+  const [font, setFont] = useState("Helvetica");
+
   const ComponentToPrint = () => {
     return (
-      <div style={{ textAlign: "left", padding: "10px" }}>
+      <Printable font={font}>
         {personal.map((exp) => (
-          <ul>
-            <PrimaryInfo>{exp.name}</PrimaryInfo>
+          <>
+            <Name>{exp.name}</Name>
             <SecondaryInfo>{exp.location}</SecondaryInfo>
-            <SecondaryInfo>{exp.email + " / " + exp.phone}</SecondaryInfo>
+            <SecondaryInfo>{"E-mail: " + exp.email + " / Phone: " + exp.phone}</SecondaryInfo>
             <Description>{exp.intro}</Description>
-          </ul>
+          </>
         ))}
         <Section>Work Experiences</Section>
         {experiences.map((exp) => (
@@ -100,7 +109,7 @@ function Generator() {
             </PrimaryInfo>
           </ul>
         ))}
-      </div>
+      </Printable>
     );
   };
 
@@ -228,7 +237,7 @@ function Generator() {
         <Experiences
           experiences={experiences}
           updateField={updateField}
-          collapse={collapse.experiences}
+          collapse={collapse.experience}
           toggle={toggle}
           remove={removeItem}
           add={addItem}
@@ -249,6 +258,8 @@ function Generator() {
           remove={removeItem}
           add={addItem}
         />
+        <Settings collapse={collapse.settings} toggle={toggle} font={font} setFont={setFont} />
+        {console.log(font)}
       </Editor>
       <Preview>
         <Paper>
