@@ -14,15 +14,26 @@ import {
 import Education from "./Education";
 import Languages from "./Languages";
 import Experiences from "./Experiences";
+import Personal from "./Personal";
 
 function Generator() {
   const componentRef = useRef(null);
 
   const [collapse, setCollapse] = useState({
-    experience: false,
+    personal: false,
+    experience: true,
     education: true,
     languages: true,
   });
+  const [personal, setPersonal] = useState([
+    {
+      name: "",
+      email: "",
+      phone: "",
+      location: "",
+      intro: "",
+    },
+  ]);
   const [experiences, setExperiences] = useState([
     {
       company: "",
@@ -51,6 +62,14 @@ function Generator() {
   const ComponentToPrint = () => {
     return (
       <div style={{ textAlign: "left", padding: "10px" }}>
+        {personal.map((exp) => (
+          <ul>
+            <PrimaryInfo>{exp.name}</PrimaryInfo>
+            <SecondaryInfo>{exp.location}</SecondaryInfo>
+            <SecondaryInfo>{exp.email + " / " + exp.phone}</SecondaryInfo>
+            <Description>{exp.intro}</Description>
+          </ul>
+        ))}
         <Section>Work Experiences</Section>
         {experiences.map((exp) => (
           <ul>
@@ -119,6 +138,17 @@ function Generator() {
         });
         setLanguages([...aux]);
         break;
+      case "personal":
+        aux = personal;
+        aux.push({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          intro: "",
+        });
+        setLanguages([...aux]);
+        break;
       default:
         alert("brete");
     }
@@ -141,6 +171,11 @@ function Generator() {
         aux = languages;
         aux.splice(index, 1);
         setLanguages([...aux]);
+        break;
+      case "personal":
+        aux = personal;
+        aux.splice(index, 1);
+        setPersonal([...aux]);
         break;
       default:
         alert("brete");
@@ -169,6 +204,11 @@ function Generator() {
         aux[index][field] = e;
         setLanguages([...aux]);
         break;
+      case "personal":
+        aux = personal;
+        aux[index][field] = e;
+        setLanguages([...aux]);
+        break;
       default:
         alert("brete");
     }
@@ -177,6 +217,14 @@ function Generator() {
   return (
     <div className="App">
       <Editor>
+        <Personal
+          personal={personal}
+          updateField={updateField}
+          collapse={collapse.personal}
+          toggle={toggle}
+          remove={removeItem}
+          add={addItem}
+        />
         <Experiences
           experiences={experiences}
           updateField={updateField}

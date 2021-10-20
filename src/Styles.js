@@ -91,6 +91,9 @@ export const Section = styled.h2`
 
 export const Editor = styled.div`
   width: 50vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
 `;
 
 export const Preview = styled.div`
@@ -121,5 +124,8 @@ export const Paper = styled.div`
 `;
 
 export const Scale = styled.div`
-  // transform: scale(0.5);
+  scale: 0.5;
+  margin-top: -100px;
+  margin-left: -100px;
+  display: flex;
 `;
