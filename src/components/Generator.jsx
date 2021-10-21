@@ -12,12 +12,16 @@ import {
   Scale,
   Name,
   Printable,
+  Button,
 } from "../Styles";
 import Education from "./Education";
 import Languages from "./Languages";
 import Experiences from "./Experiences";
 import Personal from "./Personal";
-import Settings from "./Settings";
+import Select from "./Select";
+import { FiDownloadCloud } from "react-icons/fi";
+
+const icon ={fontSize: "16px", marginBottom: "-3px" , marginRight: "6px"}
 
 function Generator() {
   const componentRef = useRef(null);
@@ -258,10 +262,9 @@ function Generator() {
           remove={removeItem}
           add={addItem}
         />
-        <Settings collapse={collapse.settings} toggle={toggle} font={font} setFont={setFont} />
-        {console.log(font)}
       </Editor>
       <Preview>
+        <Select setFont={setFont} />
         <Paper>
           <Scale>
             <div ref={componentRef}>
@@ -269,7 +272,7 @@ function Generator() {
             </div>
           </Scale>
         </Paper>
-        <ReactToPrint trigger={() => <button>Print</button>} content={() => componentRef.current} />
+        <ReactToPrint trigger={() => <Button><FiDownloadCloud style={icon}/> {" "} Print or Download</Button>} content={() => componentRef.current} />
       </Preview>
     </div>
   );

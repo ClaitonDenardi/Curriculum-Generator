@@ -43,6 +43,7 @@ export const Input = styled.input`
   border: 0px;
   pointer-events: unset;
   margin-bottom: 10px;
+  font-family: inherit;
 `;
 
 export const TextArea = styled.textarea`
@@ -54,6 +55,8 @@ export const TextArea = styled.textarea`
   border: 0px;
   pointer-events: unset;
   margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 14px;
 `;
 
 export const Name = styled.div`
@@ -106,10 +109,9 @@ export const Preview = styled.div`
   width: 50vw;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgb(211, 211, 211);
   background-position: center center, center center, 0% 0%;
   background-repeat: repeat, repeat, repeat;
@@ -139,5 +141,14 @@ export const Scale = styled.div`
 export const Printable = styled.div`
   padding: 70px; 50px;
   text-align: left;
-  font-family: ${({ font }) => (font ? font : "Helvetica")}; ;
+  font-family: ${({ font }) => (font ? font : "Helvetica")};
+`;
+
+export const Button = styled.div`
+  background: #14a750;
+  padding: 5px 15px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
 `;
