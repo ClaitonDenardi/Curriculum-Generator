@@ -7,9 +7,9 @@ import {
   Input,
   Title,
   ContainerScroll,
-} from "../Styles";
+} from "../../Styles";
+import Icon from "../atoms/Icon";
 import Commands from "./Commands";
-import ToggleIcon from "./ToggleIcon";
 
 const Languages = ({ languages, updateField, collapse, toggle, remove, add }) => {
   return (
@@ -17,7 +17,7 @@ const Languages = ({ languages, updateField, collapse, toggle, remove, add }) =>
       <Container collapse={collapse}>
         <Title>
           <span>Languages</span>
-          <ToggleIcon module="languages" collapse={collapse} toggle={toggle}/>
+          <Icon module="languages" collapse={collapse} toggle={toggle}/>
         </Title>
         <ContainerScroll>
           {languages.map((lang, index) => (

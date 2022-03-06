@@ -8,17 +8,16 @@ import {
   Title,
   ContainerScroll,
   TextArea,
-} from "../Styles";
-import Commands from "./Commands";
-import ToggleIcon from "./ToggleIcon";
+} from "../../Styles";
+import Icon from "../atoms/Icon";
 
-const Personal = ({ personal, updateField, collapse, toggle, remove, add }) => {
+const Personal = ({ personal, updateField, collapse, toggle }) => {
   return (
     <div style={{ padding: "20px" }}>
       <Container collapse={collapse}>
         <Title>
           <span>Personal data</span>
-          <ToggleIcon module="personal" collapse={collapse} toggle={toggle} />
+          <Icon module="personal" collapse={collapse} toggle={toggle} />
         </Title>
         <ContainerScroll>
           {personal.map((exp, index) => (
@@ -56,7 +55,6 @@ const Personal = ({ personal, updateField, collapse, toggle, remove, add }) => {
                   />
                 </ItemRow>
               </ItemData>
-              <Commands index={index} remove={remove} add={add} module="personal" />
             </Item>
           ))}
         </ContainerScroll>

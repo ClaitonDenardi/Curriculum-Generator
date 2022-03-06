@@ -7,9 +7,9 @@ import {
   Input,
   Title,
   ContainerScroll,
-} from "../Styles";
+} from "../../Styles";
 import Commands from "./Commands";
-import ToggleIcon from "./ToggleIcon";
+import Icon from "../atoms/Icon";
 
 const Education = ({ education, updateField, collapse, toggle, remove, add }) => {
   return (
@@ -17,7 +17,7 @@ const Education = ({ education, updateField, collapse, toggle, remove, add }) =>
       <Container collapse={collapse}>
         <Title>
           <span>Education</span>
-          <ToggleIcon module="education" collapse={collapse} toggle={toggle}/>
+          <Icon module="education" collapse={collapse} toggle={toggle}/>
         </Title>
         <ContainerScroll>
           {education.map((exp, index) => (

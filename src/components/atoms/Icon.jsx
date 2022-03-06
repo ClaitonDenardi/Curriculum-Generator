@@ -14,10 +14,10 @@ const Hover = styled.div`
   }
 `;
 
-const ToggleIcon = ({ module, collapse, toggle }) => {
+const Icon = ({ module, collapse, toggle }) => {
   return (
     <Hover onClick={() => toggle(module)}>{collapse ? <FiChevronDown /> : <FiChevronUp />}</Hover>
   );
 };
 
-export default ToggleIcon;
+export default Icon;

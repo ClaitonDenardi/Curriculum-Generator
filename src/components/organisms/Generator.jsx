@@ -13,12 +13,12 @@ import {
   Name,
   Printable,
   Button,
-} from "../Styles";
-import Education from "./Education";
-import Languages from "./Languages";
-import Experiences from "./Experiences";
-import Personal from "./Personal";
-import Select from "./Select";
+} from "../../Styles";
+import Education from "../molecules/Education";
+import Languages from "../molecules/Languages";
+import Experiences from "../molecules/Experience";
+import Personal from "../molecules/Personal";
+import Select from "../atoms/Select";
 import { FiDownloadCloud } from "react-icons/fi";
 
 const icon ={fontSize: "16px", marginBottom: "-3px" , marginRight: "6px"}

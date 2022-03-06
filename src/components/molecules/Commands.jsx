@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { ItemCommands } from "../Styles";
+import { ItemCommands } from "../../Styles";
 
 const IconButton = styled.div`
   display: flex;
