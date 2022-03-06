@@ -8,7 +8,7 @@ import {
   Title,
   ContainerScroll,
   TextArea,
-} from "../../Styles";
+} from "../Styles";
 import Icon from "../atoms/Icon";
 
 const Personal = ({ personal, updateField, collapse, toggle }) => {

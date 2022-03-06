@@ -13,7 +13,7 @@ import {
   Name,
   Printable,
   Button,
-} from "../../Styles";
+} from "../Styles";
 import Education from "../molecules/Education";
 import Languages from "../molecules/Languages";
 import Experiences from "../molecules/Experience";
@@ -25,14 +25,12 @@ const icon ={fontSize: "16px", marginBottom: "-3px" , marginRight: "6px"}
 
 function Generator() {
   const componentRef = useRef(null);
-
   const [collapse, setCollapse] = useState({
     personal: false,
     experience: true,
     education: true,
     languages: true,
   });
-
   const [personal, setPersonal] = useState([
     {
       name: "",
@@ -42,7 +40,6 @@ function Generator() {
       intro: "",
     },
   ]);
-
   const [experiences, setExperiences] = useState([
     {
       company: "",
@@ -52,7 +49,6 @@ function Generator() {
       tasks: "",
     },
   ]);
-
   const [education, setEducation] = useState([
     {
       school: "",
@@ -62,14 +58,12 @@ function Generator() {
       dtf: "",
     },
   ]);
-
   const [languages, setLanguages] = useState([
     {
       langauge: "",
       fluence: "",
     },
   ]);
-
   const [font, setFont] = useState("Helvetica");
 
   const ComponentToPrint = () => {

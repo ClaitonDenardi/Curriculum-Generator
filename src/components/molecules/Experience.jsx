@@ -8,7 +8,7 @@ import {
   Title,
   ContainerScroll,
   TextArea
-} from "../../Styles";
+} from "../Styles";
 import Commands from "./Commands";
 import Icon from "../atoms/Icon";
 

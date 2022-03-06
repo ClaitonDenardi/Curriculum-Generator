@@ -7,7 +7,7 @@ import {
   Input,
   Title,
   ContainerScroll,
-} from "../../Styles";
+} from "../Styles";
 import Icon from "../atoms/Icon";
 import Commands from "./Commands";
 

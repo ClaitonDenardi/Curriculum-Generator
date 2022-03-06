@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   border: 1px solid #c4c4c4;
-  border-radius: 8px;
   height: ${({ collapse }) => collapse && "60px"};
   overflow: ${({ collapse }) => (collapse ? "hidden" : "auto")}; ;
 `;
@@ -16,6 +15,7 @@ export const Item = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  margin-top: 10px;
 `;
 
 export const ItemData = styled.div`
@@ -36,7 +36,6 @@ export const ItemRow = styled.div`
 
 export const Input = styled.input`
   width: 42%;
-  border-radius: 8px;
   padding: 8px 16px;
   display: block;
   background-color: rgb(242, 245, 250);
@@ -44,11 +43,15 @@ export const Input = styled.input`
   pointer-events: unset;
   margin-bottom: 10px;
   font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #14a750;
+  }
 `;
 
 export const TextArea = styled.textarea`
   width: 92% !important;
-  border-radius: 8px;
   padding: 8px 16px;
   width: 100%;
   background-color: rgb(242, 245, 250);
@@ -57,6 +60,11 @@ export const TextArea = styled.textarea`
   margin-bottom: 10px;
   font-family: inherit;
   font-size: 14px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #14a750;
+  }
 `;
 
 export const Name = styled.div`
@@ -126,20 +134,23 @@ export const Preview = styled.div`
 export const Paper = styled.div`
   width: 30vw;
   height: 85vh;
-  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  border-radius: 5px;
+  background: #fff;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 20px 12px;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
 `;
 
 export const Scale = styled.div`
-  scale: 0.5;
-  margin-top: -90px;
-  margin-left: -100px;
-  display: flex;
+  scale: 0.7;
+  margin: -70px -50px;
+  width: 30vw;
+  height: 85vh;
+  overflow: hidden;
 `;
 
 export const Printable = styled.div`
-  padding: 70px; 50px;
+  padding: 70px 50px;
   text-align: left;
   font-family: ${({ font }) => (font ? font : "Helvetica")};
 `;
